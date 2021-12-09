@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('SCM checkout'){
             steps {
-		git "https://github.com/vistasunil/devopsIQ.git"
+		git "https://github.com/SomashekarMH/devopsIQ-1"
             }
 	}
 	stage('Remove dockers'){
@@ -27,7 +27,7 @@ pipeline {
 	}
 	stage('Docker Push'){
 		steps {
-		    sh "sudo docker login --username vistasunil --password ${dockerpass}"
+		    sh "sudo docker login --username somugoldeneye --password ${dockerpass}"
                     sh "sudo docker push somugoldeneye/devopsdemo:latest"
 	        }
 	}
