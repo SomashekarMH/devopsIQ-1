@@ -22,13 +22,13 @@ pipeline {
 	}
 	stage('Build'){
 	    steps {
-		    sh "sudo docker build /home/ubuntu/jenkins/workspace/${JOB_NAME} -t vistasunil/devopsdemo"
+		    sh "sudo docker build /home/ubuntu/jenkins/workspace/${JOB_NAME} -t somugoldeneye/devopsdemo"
 	   }
 	}
 	stage('Docker Push'){
 		steps {
 		    sh "sudo docker login --username vistasunil --password ${dockerpass}"
-                    sh "sudo docker push vistasunil/devopsdemo:latest"
+                    sh "sudo docker push somugoldeneye/devopsdemo:latest"
 	        }
 	}
 	stage('Configure servers with Docker and deploy website') {
